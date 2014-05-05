@@ -29,7 +29,7 @@ var argv = require('optimist')
   .default('type', 'bookmarks')
   .alias('command', 'c')
   .describe('command', 'action to perform {fetch|push}')
-  .default("env", "stage")
+  .default("env", "prod")
   .describe('env', "target environment: stage/prod or the name of an ephemeral");
 
 var args = argv.argv;
@@ -38,9 +38,9 @@ if (args.h) {
   argv.showHelp();
   process.exit(0);
 }
-var options = stage;
-if (args['env'] === "prod"){
-  options = prod;
+var options = prod;
+if (args['env'] === "stage"){
+  options = stage;
 }
 console.log("env:\n"+JSON.stringify(options));
 
