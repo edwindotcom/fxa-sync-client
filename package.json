@@ -1,0 +1,30 @@
+{
+  "name": "fxa-sync-client",
+  "version": "0.0.1",
+  "description": "Firefox Sync 1.5 client",
+  "main": "app.js",
+  "dependencies": {
+    "fx-sync": "^0.1.1",
+    "optimist": "^0.6.1",
+    "install": "^0.1.7",
+    "npm": "^1.4.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edmoz/fxa-sync-client.git"
+  },
+  "keywords": [
+    "Firefox",
+    "Sync"
+  ],
+  "author": "Edwin Wong",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/edmoz/fxa-sync-client/issues"
+  },
+  "homepage": "https://github.com/edmoz/fxa-sync-client"
+}
