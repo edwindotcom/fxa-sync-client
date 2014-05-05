@@ -4,7 +4,7 @@ var dataTypes = ["bookmarks","history","passwords","tabs","addons","prefs","form
 var envTypes = ["prod", "stage"];
 
 var argv = require('optimist')
-  .usage('Run automation tests.\nUsage: $0')
+  .usage('Print Firefox Account Sync Data.\nUsage: $0')
   .alias('help', 'h')
   .describe('help', 'display this usage message')
   .alias('email', 'e')
