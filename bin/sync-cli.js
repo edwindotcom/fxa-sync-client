@@ -3,6 +3,17 @@
 var dataTypes = ["bookmarks","history","passwords","tabs","addons","prefs","forms"];
 var envTypes = ["prod", "stage"];
 
+var prod = {
+  syncAuthUrl: 'https://token.services.mozilla.com',
+  fxaServerUrl: 'https://api.accounts.firefox.com/v1'
+};
+var stage = {
+  syncAuthUrl: 'https://token.stage.mozaws.net',
+  fxaServerUrl: 'https://api-accounts.stage.mozaws.net/v1',
+  // certs last a year
+  duration: 3600 * 24 * 365
+};
+
 var argv = require('optimist')
   .usage('Print Firefox Account Sync Data.\nUsage: $0')
   .alias('help', 'h')
@@ -27,10 +38,15 @@ if (args.h) {
   argv.showHelp();
   process.exit(0);
 }
+var options = stage;
+if (args['env'] === "prod"){
+  options = prod;
+}
+console.log("env:\n"+JSON.stringify(options));
 
 var FxSync = require('fx-sync');
 
-var sync = new FxSync({ email: args['email'], password: args['password'] });
+var sync = new FxSync({ email: args['email'], password: args['password'] }, options);
 
 function fetchData(type){
   sync.fetch(type)
