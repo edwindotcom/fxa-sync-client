@@ -4,10 +4,10 @@
   "description": "Firefox Sync 1.5 client",
   "main": "bin/sync-cli.js",
   "dependencies": {
-    "fx-sync": "^0.1.1",
-    "optimist": "0.6.1",
-    "install": "^0.1.7",
-    "npm": "^1.4.9"
+    "fx-sync": "~0.1.1",
+    "optimist": "~0.6.1",
+    "install": "~0.1.7",
+    "npm": "~1.4.9"
   },
   "devDependencies": {},
   "repository": {
