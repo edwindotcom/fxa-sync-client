@@ -30,7 +30,8 @@ var argv = require('optimist')
   .alias('command', 'c')
   .describe('command', 'action to perform {fetch|push}')
   .default("env", "prod")
-  .describe('env', "target environment: stage/prod or the name of an ephemeral");
+  .describe('env', "target environment: stage/prod or the name of an ephemeral")
+  .describe('quiet', "hide sync data print");
 
 var args = argv.argv;
 
@@ -51,8 +52,10 @@ var sync = new FxSync({ email: args['email'], password: args['password'] }, opti
 function fetchData(type){
   sync.fetch(type)
           .then(function(data) {
-            console.log("::"+type+"::");
-            console.log(JSON.stringify(data, null, 2));
+            if(!args['quiet']){
+              console.log("::"+type+"::");
+              console.log(JSON.stringify(data, null, 2));
+            }
           })
           .done();
 }
