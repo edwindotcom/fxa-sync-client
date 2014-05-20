@@ -7,7 +7,8 @@
     "fx-sync": "git://github.com/edmoz/node-fx-sync.git#monitor",
     "optimist": "~0.6.1",
     "install": "~0.1.7",
-    "npm": "~1.4.9"
+    "npm": "~1.4.9",
+    "request": "~2.36.0"
   },
   "devDependencies": {},
   "repository": {
