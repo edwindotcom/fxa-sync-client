@@ -63,6 +63,7 @@ function sendPerfData(startTime, total_time){
     uri: "https://fxa-sync.firebaseio.com/"+perfDb +"/"+ epoch +".json",
     method: 'PUT',
     json: {
+      "date"     : startTime,
       "totalTime": total_time
     }
   };
