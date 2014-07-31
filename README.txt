@@ -2,7 +2,7 @@
 git clone https://github.com/edmoz/fxa-sync-client.git
 cd fxa-sync-client
 npm install (sudo if it fails)
-bin/sync-cli.js -e EMAILl -p PASSWORD -t bookmarks
+bin/sync-cli.js -e EMAIL -p PASSWORD -t bookmarks
 
 Print Firefox Account Sync Data.
 Usage: node ./bin/sync-cli.js
